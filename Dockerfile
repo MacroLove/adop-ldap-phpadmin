@@ -23,7 +23,7 @@ WORKDIR ["/usr/share/webapps/phpldapadmin/htdocs"]
 
 ADD files/config.php  /usr/share/webapps/phpldapadmin/config/
 ADD files/nginx.conf /etc/nginx/
-ADD files/php-fpm.conf /etc/php/
+ADD files/php-fpm.conf /etc/php5/
 
 ADD files/run.sh /
 RUN chmod +x /run.sh
