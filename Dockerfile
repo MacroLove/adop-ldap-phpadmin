@@ -7,12 +7,13 @@ ENV LDAP_SERVER_HOST 'ldap'
 ENV LDAP_SERVER_PORT '389'
 ENV LDAP_SERVER_BIND_ID 'cn=admin,dc=ldap,dc=example,dc=com'
 ENV LDAP_SERVER_BASE_DN 'dc=ldap,dc=example,dc=com'
+ENV PHPLDAPADMIN_VERSION 1.2.3
 
 RUN apk update \
     && apk add bash nginx ca-certificates \
     php-fpm php-json php-zlib php-xml php-pdo php-phar php-openssl \
     php-pdo_mysql php-mysqli \
-    php-gd php-iconv php-mcrypt php-ldap phpldapadmin
+    php-gd php-iconv php-mcrypt php-ldap "phpldapadmin>=${PHPLDAPADMIN_VERSION}"
 
 # fix php-fpm "Error relocating /usr/bin/php-fpm: __flt_rounds: symbol not found" bug
 RUN apk add -u musl
