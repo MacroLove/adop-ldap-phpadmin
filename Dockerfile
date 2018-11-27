@@ -11,9 +11,9 @@ ENV PHPLDAPADMIN_VERSION 1.2.3
 
 RUN apk update \
     && apk add bash nginx ca-certificates \
-    php-fpm php-json php-zlib php-xml php-pdo php-phar php-openssl \
-    php-pdo_mysql php-mysqli \
-    php-gd php-iconv php-mcrypt php-ldap "phpldapadmin>=${PHPLDAPADMIN_VERSION}"
+    php5-fpm php5-json php5-zlib php5-xml php5-pdo php5-phar php5-openssl \
+    php5-pdo_mysql php5-mysqli \
+    php5-gd php5-iconv php5-mcrypt php5-ldap "phpldapadmin>=${PHPLDAPADMIN_VERSION}"
 
 # fix php-fpm "Error relocating /usr/bin/php-fpm: __flt_rounds: symbol not found" bug
 RUN apk add -u musl
