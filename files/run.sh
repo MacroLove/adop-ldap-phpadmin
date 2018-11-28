@@ -15,7 +15,7 @@ fi
 
 # start php-fpm
 mkdir -p /var/log/php-fpm
-php-fpm
+php-fpm5
 
 # start nginx
 mkdir -p /var/log/nginx
